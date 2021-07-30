@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Example text</p>
+    <input type="text" class="input" placeholder="1">
+    <!-- <input type="text" class="input" placeholder="2"> -->
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+    <script>
+
+        /*
+        $(".input").change(function(){
+            console.log("change on entire object");
+        });
+
+        $($(".input")[1]).change(function(){
+            console.log("change on second input tag");
+        });
+        */
+
+
+
+
+
+        // Task 1:Using Jquery
+
+        /*
+        let inputTag = $(".input");
+        inputTag.on("input",(e)=>{
+            console.log(e.currentTarget.value);
+            console.log(inputTag[0].value);
+            $("p").text(inputTag[0].value);
+        });
+
+        inputTag.on("keypress",(e)=>{
+            console.log(e.key);
+            if(e.key=="Enter"){
+                $("p").text("Example text");
+                alert(e.currentTarget.value);
+                inputTag[0].value = '';
+            }
+        });
+        */
+
+
+        // Task 1: using Javascript
+        let p = document.querySelector("p");
+        let input = document.querySelector(".input");
+
+        input.addEventListener("input",function(e){
+            p.innerText = e.currentTarget.value;
+        });
+
+        input.addEventListener("keypress",function(e){
+            if(e.key=="Enter"){
+                alert(e.currentTarget.value);
+                p.innerText = 'Example text';
+            }
+        });
+
+    </script>
+
+</body>
+</html>

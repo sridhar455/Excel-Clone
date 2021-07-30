@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        .some-class{
+            height:3rem;
+            border:1px solid;
+            color: white;
+            background-color: red;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab quos, </li>
+    </ul>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    
+    <script>
+
+        $("li").attr("data-click",0);
+
+        $("li").click(function(e){
+
+           let nOfClicks = Number($(this).attr("data-click"))
+           nOfClicks++;
+           $(this).attr("data-click",nOfClicks)
+
+           console.log(nOfClicks);
+
+           if(nOfClicks == 1){
+              $(this).addClass("some-class");
+           }
+
+           else if(nOfClicks==2){
+              $(this).removeClass("some-class");
+           }
+         
+           else if(nOfClicks==3){
+              $(this).remove();
+           }
+
+        });
+
+    </script>
+</body>
+</html>
